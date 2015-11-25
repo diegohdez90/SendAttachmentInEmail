@@ -25,22 +25,22 @@ import javax.mail.internet.MimeMultipart;
 public class SendAttachmentInEmail {
    public static void main(String[] args) {
       // Recipient's email ID needs to be mentioned.
-      String to = "direccion@veotek.mx";
+      String to = "mail@mail.mx";
 
       // Sender's email ID needs to be mentioned
-      String from = "gerencia@veotek.mx";
+      String from = "mail@mail.mx";
 
-      final String username = "gerencia@veotek.mx";//change accordingly
-      final String password = "uV0CvCwR5#I[";//change accordingly
+      final String username = "mail@mail.mx";//change accordingly
+      final String password = "";//change accordingly
 
       // Assuming you are sending email through relay.jangosmtp.net
-      String host = "mail.veotek.mx";
+      String host = "mail.mail.mx";
 
       Properties props = new Properties();
       props.put("mail.smtp.auth", "true");
       props.put("mail.smtp.starttls.enable", "true");
       props.put("mail.smtp.host", host);
-      props.put("mail.smtp.port", "26");
+      props.put("mail.smtp.port", "");
 
       // Get the Session object.
       Session session = Session.getInstance(props,
@@ -78,7 +78,7 @@ public class SendAttachmentInEmail {
 
          // Part two is attachment
          messageBodyPart = new MimeBodyPart();
-         String filename = "Estado-Cuenta-Veotek.xlsx";
+         String filename = "File Directory";
          DataSource source = new FileDataSource(filename);
          messageBodyPart.setDataHandler(new DataHandler(source));
          messageBodyPart.setFileName(filename);
